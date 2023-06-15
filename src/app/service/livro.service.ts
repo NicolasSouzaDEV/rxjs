@@ -2,12 +2,13 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, map, tap } from 'rxjs';
 import { Item, LivrosResultado } from '../models/livro.model';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class LivroService {
-  private readonly API = 'https://www.googleapis.com/books/v1/volumes';
+  private readonly API = environment.apiEndpoint;
 
   constructor(private http: HttpClient) {}
 
